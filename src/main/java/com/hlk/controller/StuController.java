@@ -50,7 +50,7 @@ public class StuController {
     }
 
     @RequestMapping(value="/updateStu",method = RequestMethod.POST)
-    public String update(@RequestParam("stuAge") int stuId,@RequestParam("stuName") String stuName,
+    public String update(@RequestParam("stuId") int stuId,@RequestParam("stuName") String stuName,
                          @RequestParam("stuAge") int stuAge,@RequestParam("stuMajor") String stuMajor){
         Stu stu = new Stu();
         stu.setStuId(stuId);

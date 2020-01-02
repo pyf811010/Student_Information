@@ -47,6 +47,7 @@
 					<li><a href="/stu/getStuInfo?stuId=1&sort[sender]=asc&searchPhrase=&id=b0df282a-0d67-40e5-8558-c9e93b7befed" target="_blank">JSON</a></li>
 				</ul>
 			</div>
+			
 			<table id="grid-data" class="table table-condensed table-hover table-striped">
 				<thead>
 				<tr>
@@ -93,7 +94,7 @@
             }).end().find(".command-delete").on("click", function(e)
             {
                 alert("You pressed delete on row: " + $(this).data("row-id"));
-                $.post("/stu/delStu",{stuId:$(this).data("row-id")},function(){
+                $.get("/stu/delStu",{stuId:$(this).data("row-id")},function(){
                     alert("删除成功");
                     $("#grid-data").bootgrid("reload");
                 });
